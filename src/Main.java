@@ -17,6 +17,6 @@ public class Main
             else
                 myList.insert(newKey);
         }
-        myList.printList();
+        myList.print();
     } // main
 } // Main

@@ -40,7 +40,7 @@ public class JLnkLst
         }
     } // InsertToList
 
-    public void printList()
+    public void print()
     {
         ListEntry tmpPtr = head;
         short count = 1;
