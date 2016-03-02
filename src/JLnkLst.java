@@ -2,12 +2,12 @@ import java.text.DecimalFormat;
 
 public class JLnkLst
 {
-    private LISTENTRY head;
-    private LISTENTRY tail;
+    private ListEntry head;
+    private ListEntry tail;
 
     public void InsertIntoList(String newRecord)
     {
-        LISTENTRY nextEntry = new LISTENTRY(newRecord);
+        ListEntry nextEntry = new ListEntry(newRecord);
 
         if (head == null)
         {
@@ -31,7 +31,7 @@ public class JLnkLst
         }
         else
         {
-            LISTENTRY tmpPtr = head;
+            ListEntry tmpPtr = head;
             while (tmpPtr.next.data.compareTo(nextEntry.data) < 0)
                 tmpPtr = tmpPtr.next;
             nextEntry.next = tmpPtr.next;
@@ -42,7 +42,7 @@ public class JLnkLst
 
     public void printList()
     {
-        LISTENTRY tmpPtr = head;
+        ListEntry tmpPtr = head;
         short count = 1;
 
         System.out.println("Enter print .... ");

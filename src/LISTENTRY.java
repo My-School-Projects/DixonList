@@ -1,13 +1,13 @@
-public class LISTENTRY
+public class ListEntry
 {
-    public LISTENTRY()
+    public ListEntry()
     {
         this("");
     }
-    public LISTENTRY(String newData)
+    public ListEntry(String newData)
     {
         data = newData;
     }
     public String data;
-    public LISTENTRY  next;
+    public ListEntry next;
 }
