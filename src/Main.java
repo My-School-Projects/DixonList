@@ -1,5 +1,4 @@
 import java.io.*;
-import java.text.DecimalFormat;
 
 public class Main
 {
@@ -16,7 +15,7 @@ public class Main
             if (newKey.equals("000"))
                 done = true;
             else
-                myList.InsertIntoList(newKey);
+                myList.insert(newKey);
         }
         myList.printList();
     } // main

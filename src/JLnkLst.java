@@ -5,7 +5,7 @@ public class JLnkLst
     private ListEntry head;
     private ListEntry tail;
 
-    public void InsertIntoList(String newRecord)
+    public void insert(String newRecord)
     {
         ListEntry nextEntry = new ListEntry(newRecord);
 
