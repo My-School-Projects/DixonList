@@ -5,43 +5,38 @@ public class JLnkLst
     private LISTENTRY head;
     private LISTENTRY tail;
 
-    public JLnkLst()
-    {
-        head = null;
-        tail = null;
-    }
-
     public void InsertIntoList(String newRecord)
     {
         LISTENTRY nextEntry = new LISTENTRY(newRecord);
 
         if (head == null)
-        { head = nextEntry;
-            tail = head;
-            System.out.println("Empty");
-        }
-        else
-        if (nextEntry.getData().compareTo(head.getData())<0)
         {
-            nextEntry.setNext(head);
             head = nextEntry;
-            System.out.println("Before");
+            tail = head;
+            System.out.println("List Empty");
         }
         else
-        if (nextEntry.getData().compareTo(tail.getData())>0)
+        if (nextEntry.data.compareTo(head.data)<0)
         {
-            tail.setNext(nextEntry);
+            nextEntry.next = head;
+            head = nextEntry;
+            System.out.println("Inserted Before");
+        }
+        else
+        if (nextEntry.data.compareTo(tail.data)>0)
+        {
+            tail.next = nextEntry;
             tail = nextEntry;
-            System.out.println("After");
+            System.out.println("Inserted After");
         }
         else
         {
             LISTENTRY tmpPtr = head;
-            while (tmpPtr.getNext().getData().compareTo(nextEntry.getData()) < 0)
-                tmpPtr = tmpPtr.getNext();
-            nextEntry.setNext(tmpPtr.getNext());
-            tmpPtr.setNext(nextEntry);
-            System.out.println("Middle");
+            while (tmpPtr.next.data.compareTo(nextEntry.data) < 0)
+                tmpPtr = tmpPtr.next;
+            nextEntry.next = tmpPtr.next;
+            tmpPtr.next = nextEntry;
+            System.out.println("Inserted into Middle");
         }
     } // InsertToList
 
@@ -53,8 +48,8 @@ public class JLnkLst
         System.out.println("Enter print .... ");
         while(tmpPtr != null)
         {
-            System.out.println("Record " + new DecimalFormat("99").format(count++)+tmpPtr.getData() + " ");
-            tmpPtr = tmpPtr.getNext();
+            System.out.println("Record " + new DecimalFormat("99").format(count++)+tmpPtr.data + " ");
+            tmpPtr = tmpPtr.next;
         }
         System.out.println("Exit print ...");
     }

@@ -5,21 +5,18 @@ public class Main
 {
     public static void main(String[] args) throws IOException
     {
-        String newRecord;
         String newKey;
         JLnkLst myList = new JLnkLst();
-        boolean Done = false;
+        boolean done = false;
 
-        while (!Done)
+        while (!done)
         {
-            System.out.println("Enter a key value ");
+            System.out.println("Enter a key value or 000 to exit");
             newKey = (new BufferedReader(new InputStreamReader(System.in))).readLine();
-            newRecord = newKey;
-            // System.out.println(newRecord.getKey());
-            if (newRecord.equals("000"))
-                Done = true;
+            if (newKey.equals("000"))
+                done = true;
             else
-                myList.InsertIntoList(newRecord);
+                myList.InsertIntoList(newKey);
         }
         myList.printList();
     } // main
