@@ -11,7 +11,7 @@ public class JLnkLst
         tail = null;
     }
 
-    public void InsertIntoList(Drecord newRecord)
+    public void InsertIntoList(String newRecord)
     {
         LISTENTRY nextEntry = new LISTENTRY(newRecord);
 
@@ -21,14 +21,14 @@ public class JLnkLst
             System.out.println("Empty");
         }
         else
-        if (nextEntry.getData().getKey().compareTo(head.getData().getKey())<0)
+        if (nextEntry.getData().compareTo(head.getData())<0)
         {
             nextEntry.setNext(head);
             head = nextEntry;
             System.out.println("Before");
         }
         else
-        if (nextEntry.getData().getKey().compareTo(tail.getData().getKey())>0)
+        if (nextEntry.getData().compareTo(tail.getData())>0)
         {
             tail.setNext(nextEntry);
             tail = nextEntry;
@@ -37,7 +37,7 @@ public class JLnkLst
         else
         {
             LISTENTRY tmpPtr = head;
-            while (tmpPtr.getNext().getData().getKey().compareTo(nextEntry.getData().getKey()) < 0)
+            while (tmpPtr.getNext().getData().compareTo(nextEntry.getData()) < 0)
                 tmpPtr = tmpPtr.getNext();
             nextEntry.setNext(tmpPtr.getNext());
             tmpPtr.setNext(nextEntry);
@@ -53,7 +53,7 @@ public class JLnkLst
         System.out.println("Enter print .... ");
         while(tmpPtr != null)
         {
-            System.out.println("Record " + new DecimalFormat("99").format(count++)+tmpPtr.getData().getKey() + " ");
+            System.out.println("Record " + new DecimalFormat("99").format(count++)+tmpPtr.getData() + " ");
             tmpPtr = tmpPtr.getNext();
         }
         System.out.println("Exit print ...");

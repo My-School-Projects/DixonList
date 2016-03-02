@@ -2,9 +2,9 @@ public class LISTENTRY
 {
     public LISTENTRY()
     {
-        this(new Drecord());
+        this(new String());
     }
-    public LISTENTRY(Drecord newData)
+    public LISTENTRY(String newData)
     {
         data = newData;
         next=null;
@@ -14,9 +14,9 @@ public class LISTENTRY
         data = anotherEntry.getData();
         next = anotherEntry.getNext();
     }
-    public Drecord getData()
+    public String getData()
     {
-        return  data;
+        return data;
     }
     public LISTENTRY getNext()
     {
@@ -26,7 +26,7 @@ public class LISTENTRY
     {
         next = refNext;
     }
-    private Drecord data;
+    private String data;
     private LISTENTRY  next;
 
 } // LISTENTRY
